@@ -4,18 +4,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+
   <title>Document</title>
 </head>
 
 <body>
   <h1>My Library</h1>
-  <div class="bookDisplay">
+  <div class="library-display">
     <p>Books to display here (stored in "library" array). Each book to have a "Remove" button.</p>
   </div>
-  <div>
-    <p>Form for adding books to go here</p>
+
+  <div class="container">
+    <div class="row">
+      <div class="col text-center my-5">
+        <h2>New Book Form</h2>
+      </div>
+    </div>
+    <form id="new-book-form">
+      <div class="form-row">
+        <div class="form-group col-8 col-sm-6 col-md-4 offset-2 offset-sm-3 offset-md-4">
+          <label class="sr-only" for="new-title">Title</label>
+          <input type="text" class="form-control form-control-sm" id="new-title" placeholder="Title">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-8 col-sm-6 col-md-4 offset-2 offset-sm-3 offset-md-4">
+          <label class="sr-only" for="new-author">Author</label>
+          <input type="text" class="form-control form-control-sm" id="new-author" placeholder="Author">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-8 col-sm-6 col-md-4 offset-2 offset-sm-3 offset-md-4">
+          <label class="sr-only" for="new-pages">Pages</label>
+          <input type="number" class="form-control form-control-sm" id="new-pages" placeholder="Number of Pages">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-12 text-center mb-5">
+          <button type="submit" class="btn btn-primary btn-sm ml-1">Submit</button>
+        </div>
+      </div>
+    </form>
   </div>
 
+<<<<<<< HEAD
+=======
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+>>>>>>> 5da787112458b380d38646447b229ceb43fa871b
   <script src="js/script.js"></script>
 </body>
 
