@@ -8,8 +8,12 @@
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +25,5 @@
   "bugs": {
     "url": "https://github.com/StevenLally/Library-JS-Project/issues"
   },
-  "homepage": "https://github.com/StevenLally/Library-JS-Project#readme"
+  "homepage": "https://stevenlally.github.io/Library-JS-Project/"
 }

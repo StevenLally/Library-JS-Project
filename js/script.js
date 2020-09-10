@@ -1,4 +1,4 @@
-let library = [];
+let libraryArray = [];
 
 //Book constructor
 function Book(title, author, pages) {
@@ -36,8 +36,8 @@ function appendBookToTable(book){
   const remove = document.createElement("td");
   remove.innerHTML = '<button type="button" class="btn btn-secondary">Remove</button>';
   remove.addEventListener("click", () => {
-    const index = library.indexOf(book);
-    library.splice(index, 1);
+    const index = libraryArray.indexOf(book);
+    libraryArray.splice(index, 1);
     updateStorage();
 
     row.remove();
@@ -58,7 +58,7 @@ function addBookToLibrary() {
   const pages = formInput[2].value;
 
   let newBook = new Book(title, author, pages);
-  library.push(newBook);
+  libraryArray.push(newBook);
 
   updateStorage();
 
@@ -67,18 +67,17 @@ function addBookToLibrary() {
 
 //display any previously stored books in array upon page load
 function displayLibrary() {
-  const libraryDiv = document.getElementById("library-display");
-    library.forEach((book) => appendBookToTable(book));
+  libraryArray.forEach((book) => appendBookToTable(book));
 }
 
 //update localStorage
 function updateStorage() {
-  localStorage.setItem('library', JSON.stringify(library));
+  localStorage.setItem('library', JSON.stringify(libraryArray));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem('library')) {
-    library = JSON.parse(localStorage.getItem('library'));
+    libraryArray = JSON.parse(localStorage.getItem('library'));
   } else {
     updateStorage();
   }
