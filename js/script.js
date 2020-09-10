@@ -13,6 +13,7 @@ function Book(title, author, pages) {
 library.push(new Book("test title 1", "test author 1", 1));
 library.push(new Book("test title 2", "test author 2", 2));
 
+//add individual book to display table in index.html
 function appendBookToTable(book){
   const row = document.createElement("tr");
 
@@ -34,17 +35,22 @@ function appendBookToTable(book){
 
   const remove = document.createElement("td");
   remove.innerHTML = '<button type="button" class="btn btn-secondary">Remove</button>';
-  remove.addEventListener("click", () => row.remove());
+  remove.addEventListener("click", () => {
+    const index = library.indexOf(book);
+    library.splice(index, 1);
+    row.remove();
+    console.log(library);
+  });
   
   row.append(title, author, pages, read, remove);
 
   document.querySelector("tbody").append(row);
 }
 
+//display any previously stored books in array upon page load
 function displayLibrary() {
   const libraryDiv = document.getElementById("library-display");
-  //update div with library array content...maybe better to run this only on load then append additions?
-  library.forEach(book => appendBookToTable(book));
+    library.forEach((book) => appendBookToTable(book));
 }
 
 //push new Book to library array based on form input
@@ -63,6 +69,8 @@ function addBookToLibrary() {
 }
 
 document.addEventListener("DOMContentLoaded", displayLibrary);
+
+//Submit book from form and reset fields
 document.querySelector("#form-btn").addEventListener("click", () => {
   addBookToLibrary();
   document.querySelector("#new-book-form").reset();
