@@ -6,5 +6,4 @@ Books are stored in an array and appended to the table each time one is added.
 Button for each row to remove that book from the table and library array.
 The "Read" column that displays whether the book has been read can be toggled between "Yes" and "No" for each individual book by clicking on the corresponding button.
 LocalStorage used to save Book data between visits.
-
-TODO: build tools to have page display properly on GH Pages with used node modules
+github-pages branch using minified src links for bootstrap and dependencies rather than the node modules in master.  This is for compatibility with github pages
